@@ -1,0 +1,50 @@
+/*
+*========================================================================================================
+*
+* File                : USART.c
+* Hardware Environment:	
+* Build Environment   : AVR Studio 4.16 + Winavr 20090313
+* Version             : V1.0
+* By                  : Wu Ze
+*
+*                                  (c) Copyright 2005-2009, WaveShare
+*                                       http://www.waveshare.net
+*                                          All Rights Reserved
+*
+*========================================================================================================
+*/
+
+#define _DVK501_M128_EX_ 1
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include "ws_usart_port.h"
+
+ISR(USART1_RX_vect)
+{      
+	uint8_t status,res;
+    if(!(WS_UCSR1A & 0x80)) //return 0xFFFF;        //no data to be received 
+    status = WS_UCSR1A;
+    res = WS_UDR1;
+    if (status & 0x1c) //return 0xFFFF;        // If error, return 0xFFFF
+	putUsart0(res); 
+    //return res;
+}  
+
+int main(void)
+{
+	DDRB=0xFF;
+	PORTB=0x00;
+	sei();			//turn on global interrupt
+	usartInit();
+	while(1)
+	{
+
+	putUsart0(0x55);
+	/*
+		putUsart0(tmp);
+		_delay_ms(10);
+		PORTB=(uint8_t)getUsart0();
+		tmp++;
+		_delay_ms(500);*/
+	}
+}
