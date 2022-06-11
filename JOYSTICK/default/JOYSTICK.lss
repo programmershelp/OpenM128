@@ -1,0 +1,213 @@
+
+JOYSTICK.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000015a  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .debug_aranges 00000020  00000000  00000000  000001ae  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  2 .debug_pubnames 0000001b  00000000  00000000  000001ce  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_info   00000076  00000000  00000000  000001e9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_abbrev 00000041  00000000  00000000  0000025f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_line   000000df  00000000  00000000  000002a0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_frame  00000020  00000000  00000000  00000380  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_str    0000007f  00000000  00000000  000003a0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+   8:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+   c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  10:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  14:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  18:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  1c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  20:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  24:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  28:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  2c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  30:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  34:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  38:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  3c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  40:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  44:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  48:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  4c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  50:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  54:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  58:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  5c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  60:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  64:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  68:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  6c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  70:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  74:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  78:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  7c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  80:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  84:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  88:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	ea e5       	ldi	r30, 0x5A	; 90
+  a0:	f1 e0       	ldi	r31, 0x01	; 1
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a0 30       	cpi	r26, 0x00	; 0
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+  b2:	0e 94 5f 00 	call	0xbe	; 0xbe <main>
+  b6:	0c 94 ab 00 	jmp	0x156	; 0x156 <_exit>
+
+000000ba <__bad_interrupt>:
+  ba:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000be <main>:
+
+int main(void)
+{
+
+
+	DDRA=0XFF;
+  be:	9f ef       	ldi	r25, 0xFF	; 255
+  c0:	9a bb       	out	0x1a, r25	; 26
+	PORTA=0X55;
+  c2:	85 e5       	ldi	r24, 0x55	; 85
+  c4:	8b bb       	out	0x1b, r24	; 27
+	SFIOR=0x00;
+  c6:	10 bc       	out	0x20, r1	; 32
+	DDRG = 0X00;
+  c8:	10 92 64 00 	sts	0x0064, r1
+	PORTG = 0Xff;
+  cc:	90 93 65 00 	sts	0x0065, r25
+		PING &=0X1F;
+		switch((PING&0x1F))
+		{	
+			case 0x1E:  while((PING&0x1F)==0x1E);PORTA =0x01;break;
+			case 0x1D:  while((PING&0x1F)==0x1D);PORTA =0x02;break;	       
+			case 0x1B:  while((PING&0x1F)==0x1B);PORTA =0x04;break;	 
+  d0:	64 e0       	ldi	r22, 0x04	; 4
+    {
+		PING &=0X1F;
+		switch((PING&0x1F))
+		{	
+			case 0x1E:  while((PING&0x1F)==0x1E);PORTA =0x01;break;
+			case 0x1D:  while((PING&0x1F)==0x1D);PORTA =0x02;break;	       
+  d2:	52 e0       	ldi	r21, 0x02	; 2
+	while(1)
+    {
+		PING &=0X1F;
+		switch((PING&0x1F))
+		{	
+			case 0x1E:  while((PING&0x1F)==0x1E);PORTA =0x01;break;
+  d4:	41 e0       	ldi	r20, 0x01	; 1
+			case 0x1D:  while((PING&0x1F)==0x1D);PORTA =0x02;break;	       
+			case 0x1B:  while((PING&0x1F)==0x1B);PORTA =0x04;break;	 
+			case 0x17:  while((PING&0x1F)==0x17);PORTA =0x08;break;	 
+			case 0x0F:  while((PING&0x1F)==0x0F);PORTA =0x10;break;	
+  d6:	30 e1       	ldi	r19, 0x10	; 16
+		switch((PING&0x1F))
+		{	
+			case 0x1E:  while((PING&0x1F)==0x1E);PORTA =0x01;break;
+			case 0x1D:  while((PING&0x1F)==0x1D);PORTA =0x02;break;	       
+			case 0x1B:  while((PING&0x1F)==0x1B);PORTA =0x04;break;	 
+			case 0x17:  while((PING&0x1F)==0x17);PORTA =0x08;break;	 
+  d8:	28 e0       	ldi	r18, 0x08	; 8
+	SFIOR=0x00;
+	DDRG = 0X00;
+	PORTG = 0Xff;
+	while(1)
+    {
+		PING &=0X1F;
+  da:	80 91 63 00 	lds	r24, 0x0063
+  de:	8f 71       	andi	r24, 0x1F	; 31
+  e0:	80 93 63 00 	sts	0x0063, r24
+		switch((PING&0x1F))
+  e4:	80 91 63 00 	lds	r24, 0x0063
+  e8:	90 e0       	ldi	r25, 0x00	; 0
+  ea:	8f 71       	andi	r24, 0x1F	; 31
+  ec:	90 70       	andi	r25, 0x00	; 0
+  ee:	8b 31       	cpi	r24, 0x1B	; 27
+  f0:	91 05       	cpc	r25, r1
+  f2:	e1 f0       	breq	.+56     	; 0x12c <main+0x6e>
+  f4:	8c 31       	cpi	r24, 0x1C	; 28
+  f6:	91 05       	cpc	r25, r1
+  f8:	34 f4       	brge	.+12     	; 0x106 <main+0x48>
+  fa:	8f 30       	cpi	r24, 0x0F	; 15
+  fc:	91 05       	cpc	r25, r1
+  fe:	21 f1       	breq	.+72     	; 0x148 <main+0x8a>
+ 100:	47 97       	sbiw	r24, 0x17	; 23
+ 102:	59 f7       	brne	.-42     	; 0xda <main+0x1c>
+ 104:	1a c0       	rjmp	.+52     	; 0x13a <main+0x7c>
+ 106:	8d 31       	cpi	r24, 0x1D	; 29
+ 108:	91 05       	cpc	r25, r1
+ 10a:	49 f0       	breq	.+18     	; 0x11e <main+0x60>
+ 10c:	4e 97       	sbiw	r24, 0x1e	; 30
+ 10e:	29 f7       	brne	.-54     	; 0xda <main+0x1c>
+		{	
+			case 0x1E:  while((PING&0x1F)==0x1E);PORTA =0x01;break;
+ 110:	80 91 63 00 	lds	r24, 0x0063
+ 114:	8f 71       	andi	r24, 0x1F	; 31
+ 116:	8e 31       	cpi	r24, 0x1E	; 30
+ 118:	d9 f3       	breq	.-10     	; 0x110 <main+0x52>
+ 11a:	4b bb       	out	0x1b, r20	; 27
+ 11c:	de cf       	rjmp	.-68     	; 0xda <main+0x1c>
+			case 0x1D:  while((PING&0x1F)==0x1D);PORTA =0x02;break;	       
+ 11e:	80 91 63 00 	lds	r24, 0x0063
+ 122:	8f 71       	andi	r24, 0x1F	; 31
+ 124:	8d 31       	cpi	r24, 0x1D	; 29
+ 126:	d9 f3       	breq	.-10     	; 0x11e <main+0x60>
+ 128:	5b bb       	out	0x1b, r21	; 27
+ 12a:	d7 cf       	rjmp	.-82     	; 0xda <main+0x1c>
+			case 0x1B:  while((PING&0x1F)==0x1B);PORTA =0x04;break;	 
+ 12c:	80 91 63 00 	lds	r24, 0x0063
+ 130:	8f 71       	andi	r24, 0x1F	; 31
+ 132:	8b 31       	cpi	r24, 0x1B	; 27
+ 134:	d9 f3       	breq	.-10     	; 0x12c <main+0x6e>
+ 136:	6b bb       	out	0x1b, r22	; 27
+ 138:	d0 cf       	rjmp	.-96     	; 0xda <main+0x1c>
+			case 0x17:  while((PING&0x1F)==0x17);PORTA =0x08;break;	 
+ 13a:	80 91 63 00 	lds	r24, 0x0063
+ 13e:	8f 71       	andi	r24, 0x1F	; 31
+ 140:	87 31       	cpi	r24, 0x17	; 23
+ 142:	d9 f3       	breq	.-10     	; 0x13a <main+0x7c>
+ 144:	2b bb       	out	0x1b, r18	; 27
+ 146:	c9 cf       	rjmp	.-110    	; 0xda <main+0x1c>
+			case 0x0F:  while((PING&0x1F)==0x0F);PORTA =0x10;break;	
+ 148:	80 91 63 00 	lds	r24, 0x0063
+ 14c:	8f 71       	andi	r24, 0x1F	; 31
+ 14e:	8f 30       	cpi	r24, 0x0F	; 15
+ 150:	d9 f3       	breq	.-10     	; 0x148 <main+0x8a>
+ 152:	3b bb       	out	0x1b, r19	; 27
+ 154:	c2 cf       	rjmp	.-124    	; 0xda <main+0x1c>
+
+00000156 <_exit>:
+ 156:	f8 94       	cli
+
+00000158 <__stop_program>:
+ 158:	ff cf       	rjmp	.-2      	; 0x158 <__stop_program>
