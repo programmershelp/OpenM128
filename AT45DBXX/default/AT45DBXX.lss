@@ -1,0 +1,653 @@
+
+AT45DBXX.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         000000f6  00800100  00000308  0000039c  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000308  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000006  008001f6  008001f6  00000492  2**0
+                  ALLOC
+  3 .debug_aranges 00000060  00000000  00000000  00000492  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 000000c1  00000000  00000000  000004f2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000060d  00000000  00000000  000005b3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000003bb  00000000  00000000  00000bc0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000051a  00000000  00000000  00000f7b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000000d0  00000000  00000000  00001498  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000001a8  00000000  00000000  00001568  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000011d  00000000  00000000  00001710  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000090  00000000  00000000  0000182d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   8:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  10:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  14:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  18:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  1c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  20:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  24:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  28:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  2c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  30:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  34:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  38:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  3c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  40:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  44:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  48:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  4c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  50:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  54:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  58:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  5c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  60:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  64:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  68:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  6c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  70:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  74:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  78:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  7c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  80:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  84:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  88:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e8 e0       	ldi	r30, 0x08	; 8
+  a0:	f3 e0       	ldi	r31, 0x03	; 3
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a6 3f       	cpi	r26, 0xF6	; 246
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+  b2:	11 e0       	ldi	r17, 0x01	; 1
+  b4:	a6 ef       	ldi	r26, 0xF6	; 246
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	ac 3f       	cpi	r26, 0xFC	; 252
+  be:	b1 07       	cpc	r27, r17
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	0e 94 67 00 	call	0xce	; 0xce <main>
+  c6:	0c 94 82 01 	jmp	0x304	; 0x304 <_exit>
+
+000000ca <__bad_interrupt>:
+  ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ce <main>:
+#include<avr/delay.h>
+#include"USART.H"
+#include"AT45DBXX.h"
+
+int main(void)
+{
+  ce:	cf 92       	push	r12
+  d0:	df 92       	push	r13
+  d2:	ef 92       	push	r14
+  d4:	ff 92       	push	r15
+  d6:	0f 93       	push	r16
+  d8:	1f 93       	push	r17
+  da:	df 93       	push	r29
+  dc:	cf 93       	push	r28
+  de:	cd b7       	in	r28, 0x3d	; 61
+  e0:	de b7       	in	r29, 0x3e	; 62
+  e2:	cf 5f       	subi	r28, 0xFF	; 255
+  e4:	d0 40       	sbci	r29, 0x00	; 0
+  e6:	0f b6       	in	r0, 0x3f	; 63
+  e8:	f8 94       	cli
+  ea:	de bf       	out	0x3e, r29	; 62
+  ec:	0f be       	out	0x3f, r0	; 63
+  ee:	cd bf       	out	0x3d, r28	; 61
+	uint8_t num;
+	uint8_t tmp[255];
+	uint8_t f_value=0;
+
+	usartInit();
+  f0:	0e 94 fd 00 	call	0x1fa	; 0x1fa <usartInit>
+	printf("*--------------------------------------------------- *\r\n");
+  f4:	80 e0       	ldi	r24, 0x00	; 0
+  f6:	91 e0       	ldi	r25, 0x01	; 1
+  f8:	0e 94 4d 01 	call	0x29a	; 0x29a <puts>
+	printf("*-------------------AT45DBXX experiment-------------- *\r\n");
+  fc:	88 e3       	ldi	r24, 0x38	; 56
+  fe:	91 e0       	ldi	r25, 0x01	; 1
+ 100:	0e 94 4d 01 	call	0x29a	; 0x29a <puts>
+	printf("*--------------------------------------------------- *\r\n");
+ 104:	80 e0       	ldi	r24, 0x00	; 0
+ 106:	91 e0       	ldi	r25, 0x01	; 1
+ 108:	0e 94 4d 01 	call	0x29a	; 0x29a <puts>
+
+
+	DDRA=0xFF;
+ 10c:	8f ef       	ldi	r24, 0xFF	; 255
+ 10e:	8a bb       	out	0x1a, r24	; 26
+	spiInitAt45db();
+ 110:	0e 94 0e 01 	call	0x21c	; 0x21c <spiInitAt45db>
+	printf("FALSH AT45DBXX Write Test \r\n");
+ 114:	81 e7       	ldi	r24, 0x71	; 113
+ 116:	91 e0       	ldi	r25, 0x01	; 1
+ 118:	0e 94 4d 01 	call	0x29a	; 0x29a <puts>
+ 11c:	00 e0       	ldi	r16, 0x00	; 0
+ 11e:	10 e0       	ldi	r17, 0x00	; 0
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ 120:	9a ef       	ldi	r25, 0xFA	; 250
+ 122:	e9 2e       	mov	r14, r25
+ 124:	f1 2c       	mov	r15, r1
+
+	for(num=0;num<255;num++) /*Written to the flash*/
+	{
+		write_buffer((uint16_t)num,num);
+ 126:	c8 01       	movw	r24, r16
+ 128:	60 2f       	mov	r22, r16
+ 12a:	0e 94 1d 01 	call	0x23a	; 0x23a <write_buffer>
+ 12e:	c7 01       	movw	r24, r14
+ 130:	01 97       	sbiw	r24, 0x01	; 1
+ 132:	f1 f7       	brne	.-4      	; 0x130 <main+0x62>
+ 134:	0f 5f       	subi	r16, 0xFF	; 255
+ 136:	1f 4f       	sbci	r17, 0xFF	; 255
+
+	DDRA=0xFF;
+	spiInitAt45db();
+	printf("FALSH AT45DBXX Write Test \r\n");
+
+	for(num=0;num<255;num++) /*Written to the flash*/
+ 138:	0f 3f       	cpi	r16, 0xFF	; 255
+ 13a:	11 05       	cpc	r17, r1
+ 13c:	a1 f7       	brne	.-24     	; 0x126 <main+0x58>
+	{
+		write_buffer((uint16_t)num,num);
+		_delay_ms(1);
+	}
+
+	printf("FALSH AT45DBXX Read Test \r\n");
+ 13e:	8d e8       	ldi	r24, 0x8D	; 141
+ 140:	91 e0       	ldi	r25, 0x01	; 1
+ 142:	0e 94 4d 01 	call	0x29a	; 0x29a <puts>
+ 146:	00 e0       	ldi	r16, 0x00	; 0
+ 148:	10 e0       	ldi	r17, 0x00	; 0
+
+	for(num=0;num<255;num++) /*Read the flash*/
+	{
+		tmp[num]=read_buffer(num);
+ 14a:	7e 01       	movw	r14, r28
+ 14c:	08 94       	sec
+ 14e:	e1 1c       	adc	r14, r1
+ 150:	f1 1c       	adc	r15, r1
+ 152:	8a ef       	ldi	r24, 0xFA	; 250
+ 154:	c8 2e       	mov	r12, r24
+ 156:	d1 2c       	mov	r13, r1
+ 158:	c8 01       	movw	r24, r16
+ 15a:	0e 94 32 01 	call	0x264	; 0x264 <read_buffer>
+ 15e:	f7 01       	movw	r30, r14
+ 160:	e0 0f       	add	r30, r16
+ 162:	f1 1f       	adc	r31, r17
+ 164:	80 83       	st	Z, r24
+ 166:	c6 01       	movw	r24, r12
+ 168:	01 97       	sbiw	r24, 0x01	; 1
+ 16a:	f1 f7       	brne	.-4      	; 0x168 <main+0x9a>
+ 16c:	0f 5f       	subi	r16, 0xFF	; 255
+ 16e:	1f 4f       	sbci	r17, 0xFF	; 255
+		_delay_ms(1);
+	}
+
+	printf("FALSH AT45DBXX Read Test \r\n");
+
+	for(num=0;num<255;num++) /*Read the flash*/
+ 170:	0f 3f       	cpi	r16, 0xFF	; 255
+ 172:	11 05       	cpc	r17, r1
+ 174:	89 f7       	brne	.-30     	; 0x158 <main+0x8a>
+ 176:	f7 01       	movw	r30, r14
+ 178:	20 e0       	ldi	r18, 0x00	; 0
+	{
+		tmp[num]=read_buffer(num);
+		_delay_ms(1);
+	}
+
+	for(num=0;num<255;num++)
+ 17a:	ae 01       	movw	r20, r28
+ 17c:	40 50       	subi	r20, 0x00	; 0
+ 17e:	5f 4f       	sbci	r21, 0xFF	; 255
+	{
+		if(tmp[num]==num)
+ 180:	9e 2f       	mov	r25, r30
+ 182:	9e 19       	sub	r25, r14
+ 184:	80 81       	ld	r24, Z
+ 186:	89 17       	cp	r24, r25
+ 188:	09 f4       	brne	.+2      	; 0x18c <main+0xbe>
+		{
+			f_value++;
+ 18a:	2f 5f       	subi	r18, 0xFF	; 255
+ 18c:	31 96       	adiw	r30, 0x01	; 1
+	{
+		tmp[num]=read_buffer(num);
+		_delay_ms(1);
+	}
+
+	for(num=0;num<255;num++)
+ 18e:	e4 17       	cp	r30, r20
+ 190:	f5 07       	cpc	r31, r21
+ 192:	b1 f7       	brne	.-20     	; 0x180 <main+0xb2>
+		}
+	}
+
+
+
+	if(f_value==0xff)
+ 194:	2f 3f       	cpi	r18, 0xFF	; 255
+ 196:	29 f4       	brne	.+10     	; 0x1a2 <main+0xd4>
+	{
+		f_value=0;
+		printf("FALSH AT45DBXX Read Test OK \r\n");		
+ 198:	88 ea       	ldi	r24, 0xA8	; 168
+ 19a:	91 e0       	ldi	r25, 0x01	; 1
+ 19c:	0e 94 4d 01 	call	0x29a	; 0x29a <puts>
+ 1a0:	04 c0       	rjmp	.+8      	; 0x1aa <main+0xdc>
+	}
+	else 
+	printf("FALSH AT45DBXX Read Test failure\r\n");
+ 1a2:	86 ec       	ldi	r24, 0xC6	; 198
+ 1a4:	91 e0       	ldi	r25, 0x01	; 1
+ 1a6:	0e 94 4d 01 	call	0x29a	; 0x29a <puts>
+ 1aa:	ff cf       	rjmp	.-2      	; 0x1aa <main+0xdc>
+
+000001ac <uart_putchar>:
+static FILE mystdout = FDEV_SETUP_STREAM(uart_putchar, NULL,_FDEV_SETUP_WRITE); 
+
+
+//From RS232 sends a byte
+static int uart_putchar(char c, FILE *stream)    
+{ 
+ 1ac:	1f 93       	push	r17
+ 1ae:	18 2f       	mov	r17, r24
+  if (c == '\n')        
+ 1b0:	8a 30       	cpi	r24, 0x0A	; 10
+ 1b2:	19 f4       	brne	.+6      	; 0x1ba <uart_putchar+0xe>
+  uart_putchar('\r', stream);      
+ 1b4:	8d e0       	ldi	r24, 0x0D	; 13
+ 1b6:	0e 94 d6 00 	call	0x1ac	; 0x1ac <uart_putchar>
+  loop_until_bit_is_set(UCSR0A, UDRE0);      
+ 1ba:	5d 9b       	sbis	0x0b, 5	; 11
+ 1bc:	fe cf       	rjmp	.-4      	; 0x1ba <uart_putchar+0xe>
+  UDR0 = c;      
+ 1be:	1c b9       	out	0x0c, r17	; 12
+  return 0;    
+} 
+ 1c0:	80 e0       	ldi	r24, 0x00	; 0
+ 1c2:	90 e0       	ldi	r25, 0x00	; 0
+ 1c4:	1f 91       	pop	r17
+ 1c6:	08 95       	ret
+
+000001c8 <putUsart0>:
+
+void putUsart0(unsigned char c)
+{ 
+	while(!(WS_UCSR0A & 0x20));
+ 1c8:	5d 9b       	sbis	0x0b, 5	; 11
+ 1ca:	fe cf       	rjmp	.-4      	; 0x1c8 <putUsart0>
+	WS_UDR0 = c;
+ 1cc:	8c b9       	out	0x0c, r24	; 12
+}
+ 1ce:	08 95       	ret
+
+000001d0 <getUsart0>:
+//From receiving a RS232 bytes
+unsigned int getUsart0(void)
+{
+    unsigned char status,res;
+	if(!(WS_UCSR0A & 0x80)) return 0xFFFF;        //no data to be received 
+ 1d0:	5f 9b       	sbis	0x0b, 7	; 11
+ 1d2:	07 c0       	rjmp	.+14     	; 0x1e2 <getUsart0+0x12>
+    status = WS_UCSR0A;
+ 1d4:	8b b1       	in	r24, 0x0b	; 11
+    res = WS_UDR0;
+ 1d6:	9c b1       	in	r25, 0x0c	; 12
+    if (status & 0x1c) return 0xFFFF;        // If error, return 0xFFFF 
+ 1d8:	8c 71       	andi	r24, 0x1C	; 28
+ 1da:	19 f4       	brne	.+6      	; 0x1e2 <getUsart0+0x12>
+    return res;
+ 1dc:	29 2f       	mov	r18, r25
+ 1de:	30 e0       	ldi	r19, 0x00	; 0
+ 1e0:	02 c0       	rjmp	.+4      	; 0x1e6 <getUsart0+0x16>
+ 1e2:	2f ef       	ldi	r18, 0xFF	; 255
+ 1e4:	3f ef       	ldi	r19, 0xFF	; 255
+}
+ 1e6:	c9 01       	movw	r24, r18
+ 1e8:	08 95       	ret
+
+000001ea <waitUsart0>:
+}
+//From receiving a RS232 bytes
+unsigned int getUsart0(void)
+{
+    unsigned char status,res;
+	if(!(WS_UCSR0A & 0x80)) return 0xFFFF;        //no data to be received 
+ 1ea:	5f 9b       	sbis	0x0b, 7	; 11
+ 1ec:	fe cf       	rjmp	.-4      	; 0x1ea <waitUsart0>
+    status = WS_UCSR0A;
+ 1ee:	8b b1       	in	r24, 0x0b	; 11
+    res = WS_UDR0;
+ 1f0:	9c b1       	in	r25, 0x0c	; 12
+    if (status & 0x1c) return 0xFFFF;        // If error, return 0xFFFF 
+ 1f2:	8c 71       	andi	r24, 0x1C	; 28
+ 1f4:	d1 f7       	brne	.-12     	; 0x1ea <waitUsart0>
+unsigned char waitUsart0(void)
+{
+    unsigned int c;
+    while((c=getUsart0())==0xFFFF);
+    return (unsigned char)c;
+}
+ 1f6:	89 2f       	mov	r24, r25
+ 1f8:	08 95       	ret
+
+000001fa <usartInit>:
+	// USART0 Receiver: On
+	// USART0 Transmitter: On
+	// USART0 Mode: Asynchronous
+	// USART0 Baud Rate: 9600
+	//
+	UCSR0A=0x00;
+ 1fa:	1b b8       	out	0x0b, r1	; 11
+	UCSR0B=0x98;
+ 1fc:	88 e9       	ldi	r24, 0x98	; 152
+ 1fe:	8a b9       	out	0x0a, r24	; 10
+	UCSR0C=0x06;
+ 200:	86 e0       	ldi	r24, 0x06	; 6
+ 202:	80 93 95 00 	sts	0x0095, r24
+	UBRR0H=0x00;
+ 206:	10 92 90 00 	sts	0x0090, r1
+	UBRR0L=0x2F;
+ 20a:	8f e2       	ldi	r24, 0x2F	; 47
+ 20c:	89 b9       	out	0x09, r24	; 9
+	stdout = &mystdout;       //Must add 
+ 20e:	88 ee       	ldi	r24, 0xE8	; 232
+ 210:	91 e0       	ldi	r25, 0x01	; 1
+ 212:	90 93 f9 01 	sts	0x01F9, r25
+ 216:	80 93 f8 01 	sts	0x01F8, r24
+}
+ 21a:	08 95       	ret
+
+0000021c <spiInitAt45db>:
+#define SET_SS_AT45DB() PORTB |= (1<<PB0);
+
+
+void spiInitAt45db(void)
+{
+	DDRB|=0x07;
+ 21c:	87 b3       	in	r24, 0x17	; 23
+ 21e:	87 60       	ori	r24, 0x07	; 7
+ 220:	87 bb       	out	0x17, r24	; 23
+	PORTB&=0xF8;
+ 222:	88 b3       	in	r24, 0x18	; 24
+ 224:	88 7f       	andi	r24, 0xF8	; 248
+ 226:	88 bb       	out	0x18, r24	; 24
+	SPCR=0x50;
+ 228:	80 e5       	ldi	r24, 0x50	; 80
+ 22a:	8d b9       	out	0x0d, r24	; 13
+	SPSR=0x01;
+ 22c:	81 e0       	ldi	r24, 0x01	; 1
+ 22e:	8e b9       	out	0x0e, r24	; 14
+}
+ 230:	08 95       	ret
+
+00000232 <spi_transmit_byte>:
+
+//==================================
+void spi_transmit_byte(uint8_t Data)
+{	
+	SPDR=Data;								
+ 232:	8f b9       	out	0x0f, r24	; 15
+    while(!(SPSR&0x80));
+ 234:	77 9b       	sbis	0x0e, 7	; 14
+ 236:	fe cf       	rjmp	.-4      	; 0x234 <spi_transmit_byte+0x2>
+}
+ 238:	08 95       	ret
+
+0000023a <write_buffer>:
+
+//============================================================
+void write_buffer(uint16_t BufferOffset,uint8_t data)
+{			
+ 23a:	28 2f       	mov	r18, r24
+	CLR_SS_AT45DB();		
+ 23c:	c0 98       	cbi	0x18, 0	; 24
+}
+
+//==================================
+void spi_transmit_byte(uint8_t Data)
+{	
+	SPDR=Data;								
+ 23e:	84 e8       	ldi	r24, 0x84	; 132
+ 240:	8f b9       	out	0x0f, r24	; 15
+    while(!(SPSR&0x80));
+ 242:	77 9b       	sbis	0x0e, 7	; 14
+ 244:	fe cf       	rjmp	.-4      	; 0x242 <write_buffer+0x8>
+}
+
+//==================================
+void spi_transmit_byte(uint8_t Data)
+{	
+	SPDR=Data;								
+ 246:	8f ef       	ldi	r24, 0xFF	; 255
+ 248:	8f b9       	out	0x0f, r24	; 15
+    while(!(SPSR&0x80));
+ 24a:	77 9b       	sbis	0x0e, 7	; 14
+ 24c:	fe cf       	rjmp	.-4      	; 0x24a <write_buffer+0x10>
+}
+
+//==================================
+void spi_transmit_byte(uint8_t Data)
+{	
+	SPDR=Data;								
+ 24e:	9f b9       	out	0x0f, r25	; 15
+    while(!(SPSR&0x80));
+ 250:	77 9b       	sbis	0x0e, 7	; 14
+ 252:	fe cf       	rjmp	.-4      	; 0x250 <write_buffer+0x16>
+}
+
+//==================================
+void spi_transmit_byte(uint8_t Data)
+{	
+	SPDR=Data;								
+ 254:	2f b9       	out	0x0f, r18	; 15
+    while(!(SPSR&0x80));
+ 256:	77 9b       	sbis	0x0e, 7	; 14
+ 258:	fe cf       	rjmp	.-4      	; 0x256 <write_buffer+0x1c>
+}
+
+//==================================
+void spi_transmit_byte(uint8_t Data)
+{	
+	SPDR=Data;								
+ 25a:	6f b9       	out	0x0f, r22	; 15
+    while(!(SPSR&0x80));
+ 25c:	77 9b       	sbis	0x0e, 7	; 14
+ 25e:	fe cf       	rjmp	.-4      	; 0x25c <write_buffer+0x22>
+	spi_transmit_byte(0x84);//84			  						
+	spi_transmit_byte(0xff);						
+	spi_transmit_byte((uint8_t)(BufferOffset>>8));	
+	spi_transmit_byte((uint8_t)BufferOffset);		
+	spi_transmit_byte(data);		
+	SET_SS_AT45DB();	
+ 260:	c0 9a       	sbi	0x18, 0	; 24
+}
+ 262:	08 95       	ret
+
+00000264 <read_buffer>:
+//================================================================
+uint8_t read_buffer(uint16_t BufferOffset)
+{		
+ 264:	28 2f       	mov	r18, r24
+    uint8_t temp;
+	CLR_SS_AT45DB();
+ 266:	c0 98       	cbi	0x18, 0	; 24
+}
+
+//==================================
+void spi_transmit_byte(uint8_t Data)
+{	
+	SPDR=Data;								
+ 268:	84 ed       	ldi	r24, 0xD4	; 212
+ 26a:	8f b9       	out	0x0f, r24	; 15
+    while(!(SPSR&0x80));
+ 26c:	77 9b       	sbis	0x0e, 7	; 14
+ 26e:	fe cf       	rjmp	.-4      	; 0x26c <read_buffer+0x8>
+}
+
+//==================================
+void spi_transmit_byte(uint8_t Data)
+{	
+	SPDR=Data;								
+ 270:	8f ef       	ldi	r24, 0xFF	; 255
+ 272:	8f b9       	out	0x0f, r24	; 15
+    while(!(SPSR&0x80));
+ 274:	77 9b       	sbis	0x0e, 7	; 14
+ 276:	fe cf       	rjmp	.-4      	; 0x274 <read_buffer+0x10>
+}
+
+//==================================
+void spi_transmit_byte(uint8_t Data)
+{	
+	SPDR=Data;								
+ 278:	9f b9       	out	0x0f, r25	; 15
+    while(!(SPSR&0x80));
+ 27a:	77 9b       	sbis	0x0e, 7	; 14
+ 27c:	fe cf       	rjmp	.-4      	; 0x27a <read_buffer+0x16>
+}
+
+//==================================
+void spi_transmit_byte(uint8_t Data)
+{	
+	SPDR=Data;								
+ 27e:	2f b9       	out	0x0f, r18	; 15
+    while(!(SPSR&0x80));
+ 280:	77 9b       	sbis	0x0e, 7	; 14
+ 282:	fe cf       	rjmp	.-4      	; 0x280 <read_buffer+0x1c>
+}
+
+//==================================
+void spi_transmit_byte(uint8_t Data)
+{	
+	SPDR=Data;								
+ 284:	8f ef       	ldi	r24, 0xFF	; 255
+ 286:	8f b9       	out	0x0f, r24	; 15
+    while(!(SPSR&0x80));
+ 288:	77 9b       	sbis	0x0e, 7	; 14
+ 28a:	fe cf       	rjmp	.-4      	; 0x288 <read_buffer+0x24>
+}
+
+//==================================
+void spi_transmit_byte(uint8_t Data)
+{	
+	SPDR=Data;								
+ 28c:	8f ef       	ldi	r24, 0xFF	; 255
+ 28e:	8f b9       	out	0x0f, r24	; 15
+    while(!(SPSR&0x80));
+ 290:	77 9b       	sbis	0x0e, 7	; 14
+ 292:	fe cf       	rjmp	.-4      	; 0x290 <read_buffer+0x2c>
+	spi_transmit_byte(0xff);
+	spi_transmit_byte((uint8_t)(BufferOffset>>8));
+	spi_transmit_byte((uint8_t)BufferOffset);
+	spi_transmit_byte(0xff);
+	spi_transmit_byte(0xff);
+	temp=SPDR;	  
+ 294:	8f b1       	in	r24, 0x0f	; 15
+	SET_SS_AT45DB();
+ 296:	c0 9a       	sbi	0x18, 0	; 24
+    return temp;								
+}
+ 298:	08 95       	ret
+
+0000029a <puts>:
+ 29a:	0f 93       	push	r16
+ 29c:	1f 93       	push	r17
+ 29e:	cf 93       	push	r28
+ 2a0:	df 93       	push	r29
+ 2a2:	8c 01       	movw	r16, r24
+ 2a4:	e0 91 f8 01 	lds	r30, 0x01F8
+ 2a8:	f0 91 f9 01 	lds	r31, 0x01F9
+ 2ac:	83 81       	ldd	r24, Z+3	; 0x03
+ 2ae:	81 ff       	sbrs	r24, 1
+ 2b0:	21 c0       	rjmp	.+66     	; 0x2f4 <puts+0x5a>
+ 2b2:	c0 e0       	ldi	r28, 0x00	; 0
+ 2b4:	d0 e0       	ldi	r29, 0x00	; 0
+ 2b6:	0d c0       	rjmp	.+26     	; 0x2d2 <puts+0x38>
+ 2b8:	e0 91 f8 01 	lds	r30, 0x01F8
+ 2bc:	f0 91 f9 01 	lds	r31, 0x01F9
+ 2c0:	20 85       	ldd	r18, Z+8	; 0x08
+ 2c2:	31 85       	ldd	r19, Z+9	; 0x09
+ 2c4:	bf 01       	movw	r22, r30
+ 2c6:	f9 01       	movw	r30, r18
+ 2c8:	09 95       	icall
+ 2ca:	89 2b       	or	r24, r25
+ 2cc:	11 f0       	breq	.+4      	; 0x2d2 <puts+0x38>
+ 2ce:	cf ef       	ldi	r28, 0xFF	; 255
+ 2d0:	df ef       	ldi	r29, 0xFF	; 255
+ 2d2:	f8 01       	movw	r30, r16
+ 2d4:	81 91       	ld	r24, Z+
+ 2d6:	8f 01       	movw	r16, r30
+ 2d8:	88 23       	and	r24, r24
+ 2da:	71 f7       	brne	.-36     	; 0x2b8 <puts+0x1e>
+ 2dc:	e0 91 f8 01 	lds	r30, 0x01F8
+ 2e0:	f0 91 f9 01 	lds	r31, 0x01F9
+ 2e4:	20 85       	ldd	r18, Z+8	; 0x08
+ 2e6:	31 85       	ldd	r19, Z+9	; 0x09
+ 2e8:	8a e0       	ldi	r24, 0x0A	; 10
+ 2ea:	bf 01       	movw	r22, r30
+ 2ec:	f9 01       	movw	r30, r18
+ 2ee:	09 95       	icall
+ 2f0:	89 2b       	or	r24, r25
+ 2f2:	11 f0       	breq	.+4      	; 0x2f8 <puts+0x5e>
+ 2f4:	cf ef       	ldi	r28, 0xFF	; 255
+ 2f6:	df ef       	ldi	r29, 0xFF	; 255
+ 2f8:	ce 01       	movw	r24, r28
+ 2fa:	df 91       	pop	r29
+ 2fc:	cf 91       	pop	r28
+ 2fe:	1f 91       	pop	r17
+ 300:	0f 91       	pop	r16
+ 302:	08 95       	ret
+
+00000304 <_exit>:
+ 304:	f8 94       	cli
+
+00000306 <__stop_program>:
+ 306:	ff cf       	rjmp	.-2      	; 0x306 <__stop_program>
