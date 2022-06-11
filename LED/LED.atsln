@@ -1,0 +1,18 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Atmel Studio Solution File, Format Version 11.00
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D1100916-62DA-4D80-A9B4-55A1E7CCEEB3}") = "LED", "LED.cproj", "{654C93B1-4CDF-449E-B839-1815961AAF24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		default|AVR = default|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{654C93B1-4CDF-449E-B839-1815961AAF24}.default|AVR.ActiveCfg = default|AVR
+		{654C93B1-4CDF-449E-B839-1815961AAF24}.default|AVR.Build.0 = default|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
